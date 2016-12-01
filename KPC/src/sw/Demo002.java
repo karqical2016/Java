@@ -11,6 +11,7 @@ public class Demo002 {
 		System.out.println("hello Demo002");
 		
 		System.out.println("hello Demo002");
+		System.out.println("hello Demo002");
 		
 		for (int i = 0; i < 10; i++) {
 			System.out.println(i);
