@@ -13,7 +13,7 @@ public class Demo01 {
 			count++;			
 		}
 		System.out.println("加分后的成绩"+score);
-		System.out.println("共加了"+count+"次");
+		System.out.println("共加了"+count+"次！");
 	    input.close();
     	
 	}
