@@ -2,6 +2,15 @@ package com.imooc2;
 
 public class Telphone {
 
+	public Telphone()
+	{
+		
+		
+		
+		
+	}
+	
+	
 	// Ù–‘
 	float screen;
 	float cpu;
