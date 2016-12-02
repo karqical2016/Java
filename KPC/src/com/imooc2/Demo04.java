@@ -6,8 +6,7 @@ public class Demo04 {
 		
 		public void show()
 		{
-			System.out.println("正在访问内部类！");
-			
+			System.out.println("正在访问内部类！");			
 		}
 	}
 	
