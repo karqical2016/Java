@@ -14,7 +14,8 @@ public class Demo02 {
 		int classNum=3;
 		int studNum=4;
 		double sum=0;
-		double avg=0;		
+		double avg=0;
+		
 		Scanner input =new Scanner(System.in);		
 		for (int i = 1; i <=classNum; i++) {
 			sum=0;	
