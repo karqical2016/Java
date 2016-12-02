@@ -5,9 +5,9 @@ public class InitailTelpone {
 		Telphone phone=new Telphone();
 		phone.sendMessage();
 		
-		phone.cpu=1.5f;
-		phone.mem=2.0f;
-		phone.screen=5.0f;
+		phone.setCpu(1.5f);
+		phone.setMem(2.0f);
+		phone.setScreen(5.0f);
 		
 		phone.sendMessage();
 		phone.call();
