@@ -29,6 +29,7 @@ public class Demo02 {
 			avg=sum/studNum;					
 			System.out.println("第"+i+"个班级学生的平均成绩："+avg);
 		}
+		input.close();
 		
 	}
 }
