@@ -10,5 +10,6 @@ public class InitailTelpone {
 		phone.screen=5.0f;
 		
 		phone.sendMessage();
+		phone.call();
 	}
 }
