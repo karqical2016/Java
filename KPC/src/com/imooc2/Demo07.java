@@ -15,12 +15,10 @@ public class Demo07 {
 			}
 	        
 			// 创建方法内部类的对象
-			MInner in=new MInner();
-			
+			MInner in=new MInner();		
 	        
 	        // 调用内部类的方法
-			int newScore=in.getScore();
-			
+			int newScore=in.getScore();			
 	        
 			System.out.println("姓名：" + name + "\n加分后的成绩：" + newScore);
 		}
