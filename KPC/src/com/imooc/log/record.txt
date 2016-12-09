@@ -104,6 +104,48 @@
 
 	object 类是所有子类的父类，如果一个类没有使用extends关键字明确标识继承另外一个类，那么这个类默认继承Object类。
 	object 类中的方法，适合所有的子类。
+	
+	常用object类中的方法：
+	
+	1. toString() :
+	
+		在Object类里面定义toString()方法的时候默认返回对象的哈希code码 (对象地址字符串)；
+		可以重写toString()方法表示出对象的属性
+		
+		@override
+		public void toString()
+		{
+			return "Dog[age="+age+"]";
+		}
+		
+	2. equals()：
+	
+		比较的时对象的引用是否指向同一块内存地址；
+		
+		比如：Dog dog = new Dog();
+			此时创建的dog 是创建的dog引用指向内存中的一个地址，
+			而通过调用dog对象的在内存中的地址，间接的使用对象
+		
+		但是一般情况下，比较两个对象时，是比较两个对象的值是否相同，所以需要重写此equals方法。
+		
+		@override
+		public boolean equals(Object obj)
+		{
+			if(this==obj)
+				return true;
+			if(obj==null)
+				return false;
+			if(getClass()!=obj.getClass())
+				return false;
+			Dog other=(Dog)obj;
+			
+			if(age!=other.age)
+				return false;
+			return true;
+		}
+		
+		
+		
 
 
 		
