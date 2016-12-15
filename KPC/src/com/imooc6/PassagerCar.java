@@ -7,74 +7,14 @@ package com.imooc6;
  */
 public class PassagerCar extends Car {
 
-	public double cargoCapacity;
-	public double dailyRent;
-	public String name;
-	public int passagerCapacity;
 
-	public PassagerCar() {
-
+	public PassagerCar(String theName, int thePassgerCarCapacity, double DailyRent) {
+		this.setName(theName);
+		this.setDailyRent(DailyRent);
+		this.setPassagerCapacity(thePassgerCarCapacity);
+		this.setCargoCapacity(0.0);
 	}
 
-	/**
-	 * 
-	 * @param theName
-	 * @param theRent
-	 * @param thePassgerCarCapacity
-	 */
-	public PassagerCar(String theName, int thePassgerCarCapacity, double theRent) {
-		this.name = theName;
-		this.dailyRent = theRent;
-		this.passagerCapacity = thePassgerCarCapacity;
-		this.cargoCapacity = 0.0;
-	}
-
-	public double getCargoCapacity() {
-		return this.cargoCapacity;
-	}
-
-	public double getDailyRent() {
-		return this.dailyRent;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public int getPassagerCapacity() {
-		return this.passagerCapacity;
-	}
-
-	/**
-	 * 
-	 * @param theCargoCapacity
-	 */
-	public void setCargoCapacity(double theCargoCapacity) {
-		this.cargoCapacity = theCargoCapacity;
-	}
-
-	/**
-	 * 
-	 * @param theDailyRent
-	 */
-	public void setDailyRent(double theDailyRent) {
-		this.dailyRent = theDailyRent;
-	}
-
-	/**
-	 * 
-	 * @param theName
-	 */
-	public void setName(String theName) {
-		this.name = theName;
-	}
-
-	/**
-	 * 
-	 * @param thePassagerCapacity
-	 */
-	public void setPassagerCapacity(int thePassagerCapacity) {
-		this.passagerCapacity = thePassagerCapacity;
-	}
+	
 
 }
