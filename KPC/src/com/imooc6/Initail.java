@@ -6,6 +6,8 @@ public class Initail {
 	public static void main(String[] args) {
 
 		// TODO Auto-generated method stub 
+		
+		int xxxx=0;
 		System.out.println("欢迎使用答答租车系统!");
 		System.out.println("您是否需要租车：1是 0否");
 		Scanner input1 = new Scanner(System.in);
