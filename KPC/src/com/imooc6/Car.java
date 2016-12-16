@@ -13,7 +13,6 @@ public class Car {
 	public String name;
 	public int passagerCapacity;
 
-
 	public double getCargoCapacity(){
 		return this.cargoCapacity;
 	}

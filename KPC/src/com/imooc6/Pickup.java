@@ -7,7 +7,6 @@ package com.imooc6;
  */
 public class Pickup extends Car {
 
-	
 	public Pickup(String theName, double DailyRent, int thePassgerCarCapacity, double theCargoCapacity) {
 		this.setName(theName);
 		this.setDailyRent(DailyRent);
