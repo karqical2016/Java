@@ -164,7 +164,7 @@
 			return true;
 		}
 		
-4-1  java中的多态
+4-1  java中的多态	com.imooc4
 	1. 引用的多态
 		父类的引用可以指向本类的对象:Animal obj1 =new Animal();
 		父类的引用可以指向子类的对象:Animal obj2 =new Dog();
@@ -173,7 +173,7 @@
 		创建本类对象时，调用方法为本类的方法
 		创建子类对象时，调用方法为子类重写的方法或者继承的方法	
 		
-4-2 java 中的引用类型转换
+4-2 java 中的引用类型转换	  com.imooc4
 	1. 向上类型转换（隐式/自动类型转换）,是小类型到大类型的转换
 		不存在风险，也叫自动类型转换
 	2. 向下类型转换(强制类型转换)，是大类型到小类型的转换
@@ -340,7 +340,7 @@
 			
 	 
 	
-6-1 综合练习
+6-1 综合练习	com.imooc6
 	根据所学知识，编写一个控制台版的 "租车系统"
 	
 	功能：
@@ -373,7 +373,118 @@
 				如： 请选择车辆 -> 请输入序号 -> 输出总金额...
 				
 
+java入门第三季
+
+1-1 java异常简介
+	异常简介
+		1. 异常处理的作用
+		2. java异常体系结构简介
+	处理异常
+		1. try-catch 以及 try-catch-finally	try 语句块不可以独立存在，必须与 catch 或者 finally 块同存 
+		2. 抛出异常
+		3. 自定义异常
+		4. 异常链
+			Throwable
+					->			Error		指系统错误，内存溢出，线程死锁(ThreadDeath)，虚拟机错误(VirtualMachineError),程序彻底终止了
+									->->	AWTEorror
+									->->	VirtualMachineError
+					->			Exception	编码、环境、用户操作输入出现问题
+									->->	RuntimeException（非检查异常）	系统会自动提示处理捕获
+												->->->		NullPointerException(空指针异常)
+												->->->		NullSuchElementException
+																		->->->->		InputMismatchException	
+												->->->		ClassCastException(类型转换异常)
+												->->->		ArithmeticException(算数异常)
+												->->->		illegalArgumentException
+																		->->->->		NumberFormatException
+												->->->		illegalStateException
+												->->->		IndexOutOfBoundsException	
+																		->->->->		ArrayIndexOutOfBoundsException(数组下表越界异常)
+												->->->		NullPointerException
+												
+									->->	检查异常	需要手动添加处理与捕获语句
+											IOException(文件异常)
+												->->->			EOFException
+												->->->			FileNotFoundException
+												->->->			MalformedURLException
+												->->->			UnknownHostException
+											ClassNotFoundException
+											CloneNotSupportException
+											SQLException(SQL异常)
+												
+1-2	java中使用try-catch 以及 try-catch-finally
+
+	try
+	{
+		//一些会抛出异常的方法
+	}
+	catch(Exception e)
+	{
+		//处理该异常的代码块
+	}
+	
+	如果try抛出异常，将会发生什么：
+		首先，抛出异常的方法终止执行，然后程序的控制权将被移交给catch块中的异常处理程序，根据不同的业务来对待。
+	比如：
+		1. 发出一些警告，检查配置，网络连接
+		2. 进行错误日志记录
 		
+	多种异常的处理方式:多重catch块,需要按照先子类异常，后父类异常，从小到大的处理，因为程序会就近寻找处理异常的程序
+	
+	finally语句块
+		
+1-3 java中通过案例学习try...catch	com.imooc7.TryCatchTest
+
+1-5 java忠的异常抛出以及自定义异常		com.imooc7.DruckException
+	throw :	将产生的异常抛出，表明抛出异常的动作
+	throws:	写在方法名，方法的参数标识后，在方法体之前，用它修饰的方法，向调用者表明该方法可能会抛出某种类型的异常，
+			可以抛出一种类型的异常，也可以抛出多种类型,每个类型之间用逗号隔开。
+	
+	public void 方法名(参数表)	throws 异常列表{
+		//调用会抛出异常的方法或者:
+		throw new Exception();	
+	}	
+	
+	
+	Public void divide(int one ,int two) throws Exception{
+		if(two==0){
+			throw new Exception("除数不能为0");
+		}
+		else{
+			System.out.println("结果为:"+one/two);
+		}
+	}
+
+	*自定义异常：
+		class 自定义异常类 	extends	异常类型{
+		
+		}
+
+1-7 Java中的异常链 	com.imooc7.ChainTest
+
+
+
+1-9 java中的异常经验总结
+	1. 处理运行时异常时，采用逻辑去合理规避同时辅助try-catch处理
+	2. 在多重catch块后面，可以加上一个catch(Exception e) 来处理可能被遗漏的异常
+	3. 对于不确定的代码，也可以加上try-catch，处理潜在的异常
+	4. 尽量去处理异常，切忌知识简单的调用printStackTrace()去打印输出，最好在打印异常的同时进行业务回滚等操作。
+	5. 具体的异常处理，需要和业务场景、需求和异常类型去确定
+	6. 尽量在最后添加Finally语句块释放占用的资源，尤其是网络连接，文件流
+	
+
+2-1 java中的字符串
+
+	String 对象创建后则不能被修改，是不可变的，所谓的修改其实是创建了新的对象，所指向的内存空间不同
+	1、 通过 String s1="爱慕课"; 声明了一个字符串对象， s1 存放了到字符串对象的引用,
+	         然后通过 s1="欢迎来到："+s1; 改变了字符串 s1 ，其实质是创建了新的字符串对象，变量 s1 指向了新创建的字符串对象
+	2、 一旦一个字符串在内存中创建，则这个字符串将不可改变。如果需要一个可以改变的字符串，我们可以使用StringBuffer或者StringBuilder（后面章节中会讲到）。
+
+	3、 每次 new 一个字符串就是产生一个新的对象，即便两个字符串的内容相同，使用 ”==” 比较时也为 ”false” ,如果只需比较内容是否相同，应使用 ”equals()” 方法（前面条件运算符章节讲过哦~~）
+			
+		
+												
+2-3 java中中String 类的常用方法
 		
 		
 		
